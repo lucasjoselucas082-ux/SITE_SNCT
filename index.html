@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Projeto Mulheres na Ciência, inspirado na trajetória de Marie Curie.">
+    <title>Mulheres na Ciência</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="site-header">
+        <a class="brand" href="#inicio">
+            <span class="brand-mark">MC</span>
+            <span>Mulheres <em>na Ciência</em></span>
+        </a>
+
+        <button class="menu-toggle" id="menuToggle">☰</button>
+
+        <nav class="main-nav" id="mainNav">
+            <button class="tab-button active" type="button" data-tab="historia">A história</button>
+            <button class="tab-button" type="button" data-tab="descobertas">Descobertas</button>
+            <button class="tab-button" type="button" data-tab="representatividade">Representatividade</button>
+            <button class="tab-button" type="button" data-tab="projeto">O projeto</button>
+        </nav>
+    </header>
+
+    <main>
+
+        <div class="tab-panel active" data-panel="historia">
+
+            <section class="hero" id="inicio">
+                <div class="hero-text">
+                    <p class="eyebrow">SEMANA NACIONAL DE CIÊNCIA E TECNOLOGIA</p>
+
+                    <h1>
+                        Conhecimento científico é uma forma de
+                        <i>transformar o mundo.</i>
+                    </h1>
+
+                    <p class="hero-description">
+                        Uma experiência educativa sobre a presença das mulheres na ciência,
+                        inspirada na trajetória, na curiosidade e nas descobertas de Marie Curie.
+                    </p>
+
+                    <div class="hero-actions">
+                        <button class="button button-primary" type="button" data-go="historia">
+                            Conheça a história
+                        </button>
+                        <button class="text-link" type="button" data-go="projeto">
+                            Explore o projeto ↗
+                        </button>
+                    </div>
+
+                    <div class="hero-note">
+                        <span class="small-line"></span>
+                        Ciência, memória e protagonismo feminino.
+                    </div>
+                </div>
+
+                <div class="hero-image-wrap">
+                    <img class="hero-image"
+                        src="https://commons.wikimedia.org/wiki/Special:FilePath/Marie_Curie_c1920.jpg"
+                        alt="Retrato histórico de Marie Curie"
+                        onerror="this.style.display='none';this.nextElementSibling.style.display='grid'">
+
+                    <div class="image-fallback">
+                        <span>MARIE<br>CURIE</span>
+                        <small>1867 — 1934</small>
+                    </div>
+
+                    <div class="image-caption">
+                        <span>UM LEGADO CIENTÍFICO</span>
+                        <span>Marie Curie</span>
+                    </div>
+                </div>
+
+                <div class="hero-stamp">
+                    CIÊNCIA<br><b>SEM</b><br>FRONTEIRAS
+                </div>
+            </section>
+
+            <section class="intro section-shell">
+                <div class="section-kicker">APRESENTAÇÃO</div>
+
+                <div class="intro-grid">
+                    <h2>
+                        Uma história que merece ser <i>contada.</i>
+                    </h2>
+
+                    <div>
+                        <p class="lead">
+                            Durante muito tempo, a contribuição das mulheres para a ciência
+                            recebeu menos reconhecimento do que merecia.
+                        </p>
+
+                        <p>
+                            A proposta é aproximar o público da história de Marie Curie,
+                            apresentando suas pesquisas e o contexto em que desenvolveu seu trabalho.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="history section-shell">
+                <div class="section-heading">
+                    <div>
+                        <div class="section-kicker">TRAJETÓRIA</div>
+                        <h2>Marie Curie: uma vida dedicada à ciência</h2>
+                    </div>
+
+                    <p>
+                        Da formação acadêmica às descobertas que marcaram
+                        a história da física e da química.
+                    </p>
+                </div>
+
+                <div class="timeline">
+
+                    <article class="timeline-item">
+                        <span class="year">1867</span>
+                        <div class="timeline-dot"></div>
+                        <div>
+                            <h3>Uma infância de curiosidade</h3>
+                            <p>
+                                Maria Skłodowska nasceu em Varsóvia, então parte do Império Russo.
+                                Cresceu em uma família que valorizava a educação.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="timeline-item">
+                        <span class="year">1891</span>
+                        <div class="timeline-dot"></div>
+                        <div>
+                            <h3>Estudos em Paris</h3>
+                            <p>
+                                Mudou-se para Paris e ingressou na Universidade de Sorbonne,
+                                onde estudou Física e Matemática.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="timeline-item">
+                        <span class="year">1898</span>
+                        <div class="timeline-dot"></div>
+                        <div>
+                            <h3>Novos elementos químicos</h3>
+                            <p>
+                                Em colaboração com Pierre Curie, anunciou a descoberta
+                                de dois elementos: o polônio e o rádio.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="timeline-item">
+                        <span class="year">1903</span>
+                        <div class="timeline-dot"></div>
+                        <div>
+                            <h3>Primeiro Prêmio Nobel</h3>
+                            <p>
+                                Recebeu o Nobel de Física, compartilhado com Pierre Curie
+                                e Henri Becquerel.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="timeline-item">
+                        <span class="year">1911</span>
+                        <div class="timeline-dot"></div>
+                        <div>
+                            <h3>Segundo Prêmio Nobel</h3>
+                            <p>
+                                Recebeu o Nobel de Química por seus trabalhos sobre
+                                o rádio e o polônio.
+                            </p>
+                        </div>
+                    </article>
+
+                </div>
+            </section>
+        </div>
+
+        <div class="tab-panel" data-panel="descobertas" hidden>
+
+            <section class="discovery" id="contribuicoes">
+                <div class="discovery-inner">
+                    <div class="section-kicker light">CONTRIBUIÇÕES</div>
+
+                    <h2>
+                        Descobertas que ampliaram os limites do conhecimento.
+                    </h2>
+
+                    <div class="discovery-cards">
+
+                        <article class="discovery-card">
+                            <span class="card-number">A</span>
+                            <h3>Radioatividade</h3>
+                            <p>
+                                Marie Curie aprofundou o estudo da radioatividade e ajudou
+                                a estabelecer esse campo como uma área importante
+                                de investigação científica.
+                            </p>
+                        </article>
+
+                        <article class="discovery-card">
+                            <span class="card-number">B</span>
+                            <h3>Polônio</h3>
+                            <p>
+                                Elemento químico de número atômico 84, identificado em 1898
+                                e nomeado em referência à Polônia.
+                            </p>
+                        </article>
+
+                        <article class="discovery-card">
+                            <span class="card-number">C</span>
+                            <h3>Rádio</h3>
+                            <p>
+                                Elemento químico de número atômico 88, também anunciado em 1898.
+                                Sua investigação contribuiu para novas pesquisas.
+                            </p>
+                        </article>
+
+                    </div>
+
+                    <p class="note-light">
+                        Nota histórica: os estudos sobre radioatividade foram fundamentais
+                        para avanços posteriores na ciência.
+                    </p>
+                </div>
+            </section>
+        </div>
+
+        <div class="tab-panel" data-panel="representatividade" hidden>
+
+            <section class="women section-shell" id="mulheres">
+                <div class="section-heading">
+                    <div>
+                        <div class="section-kicker">REPRESENTATIVIDADE</div>
+                        <h2>Marie Curie: uma mulher que transformou a ciência</h2>
+                    </div>
+
+                    <p>
+                        Sua trajetória representa a importância da participação feminina
+                        na construção do conhecimento científico.
+                    </p>
+                </div>
+
+                <div class="women-grid">
+
+                    <article>
+                        <div class="woman-index">1867 — 1934</div>
+                        <h3>Uma trajetória de superação</h3>
+                        <p>
+                            Marie Curie enfrentou dificuldades para ter acesso à educação
+                            e desenvolver sua carreira científica em uma época em que
+                            as mulheres encontravam muitas barreiras nas universidades
+                            e nas instituições de pesquisa.
+                        </p>
+                        <span>EDUCAÇÃO E OPORTUNIDADES</span>
+                    </article>
+
+                    <article>
+                        <div class="woman-index">1903</div>
+                        <h3>Reconhecimento internacional</h3>
+                        <p>
+                            Tornou-se a primeira mulher a receber um Prêmio Nobel,
+                            ao conquistar o Nobel de Física por suas pesquisas
+                            sobre os fenômenos da radiação.
+                        </p>
+                        <span>PRÊMIO NOBEL DE FÍSICA</span>
+                    </article>
+
+                    <article>
+                        <div class="woman-index">1911</div>
+                        <h3>Um legado para as futuras gerações</h3>
+                        <p>
+                            Recebeu seu segundo Prêmio Nobel, desta vez em Química.
+                            Sua trajetória tornou-se uma referência para mulheres
+                            interessadas em seguir carreiras científicas.
+                        </p>
+                        <span>PRÊMIO NOBEL DE QUÍMICA</span>
+                    </article>
+
+                </div>
+            </section>
+        </div>
+
+        <div class="tab-panel" data-panel="projeto" hidden>
+
+            <section class="game-section section-shell" id="jogo">
+                <div class="section-kicker">EXPERIÊNCIA INTERATIVA</div>
+
+                <div class="game-grid">
+                    <div>
+                        <p class="eyebrow">APRENDER EXPLORANDO</p>
+
+                        <h2>
+                            Uma trajetória transformada em <i>aventura.</i>
+                        </h2>
+
+                        <p>
+                            O projeto apresenta a história de Marie Curie por meio de
+                            recursos digitais e conteúdos educativos, aproximando o público
+                            de suas pesquisas e contribuições para a ciência.
+                        </p>
+
+                        <button class="button button-primary" type="button" data-go="projeto">
+                            Conheça o projeto
+                        </button>
+                    </div>
+
+                    <div class="game-art">
+                        <div class="pixel-window">
+                            <div class="pixel-top">
+                                <span>LABORATÓRIO • 1898</span>
+                                <span>● ● ●</span>
+                            </div>
+
+                            <div class="pixel-scene">
+                                <div class="shelf"></div>
+                                <div class="desk"></div>
+                                <div class="flask flask-one"></div>
+                                <div class="flask flask-two"></div>
+                                <div class="character"><span></span></div>
+                                <div class="scene-label">LABORATÓRIO DE MARIE CURIE</div>
+                            </div>
+                        </div>
+
+                        <p class="art-caption">
+                            Ilustração conceitual de um laboratório da época.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="mechanics">
+                    <div>
+                        <span>Exploração</span>
+                        <b>Conhecimento</b>
+                        <small>Conhecer o contexto histórico e científico.</small>
+                    </div>
+
+                    <div>
+                        <span>Pesquisa</span>
+                        <b>Descobertas</b>
+                        <small>Compreender as contribuições de Marie Curie.</small>
+                    </div>
+
+                    <div>
+                        <span>Aprendizado</span>
+                        <b>Investigação</b>
+                        <small>Relacionar informações e conhecimentos científicos.</small>
+                    </div>
+
+                    <div>
+                        <span>Educação</span>
+                        <b>Reflexão</b>
+                        <small>Valorizar a participação das mulheres na ciência.</small>
+                    </div>
+                </div>
+            </section>
+
+            <section class="quiz-section" id="desafio">
+                <div class="quiz-box">
+                    <div class="section-kicker light">TESTE SEUS CONHECIMENTOS</div>
+
+                    <h2>O que você aprendeu sobre Marie Curie?</h2>
+
+                    <p class="quiz-question" id="question"></p>
+                    <div class="quiz-options" id="options"></div>
+                    <p class="quiz-feedback" id="feedback" aria-live="polite"></p>
+
+                    <button class="quiz-next" id="nextQuestion" hidden>
+                        Próxima pergunta →
+                    </button>
+                </div>
+            </section>
+
+            <section class="project-section" id="projeto">
+                <div class="project-inner">
+
+                    <div>
+                        <div class="section-kicker light">SOBRE O PROJETO</div>
+
+                        <h2>Ciência, tecnologia e educação em diálogo.</h2>
+
+                        <p>
+                            Este projeto foi concebido para a Semana Nacional de Ciência
+                            e Tecnologia (SNCT), com o propósito de valorizar a contribuição
+                            das mulheres para a ciência e demonstrar como recursos digitais
+                            podem apoiar a divulgação científica.
+                        </p>
+                    </div>
+
+                    <div class="project-info">
+                        <div>
+                            <small>PROJETO</small>
+                            <b>Mulheres na Ciência</b>
+                        </div>
+
+                        <div>
+                            <small>PERSONALIDADE CENTRAL</small>
+                            <b>Marie Curie (1867–1934)</b>
+                        </div>
+
+                        <div>
+                            <small>EVENTO</small>
+                            <b>Semana Nacional de Ciência e Tecnologia</b>
+                        </div>
+
+                        <div>
+                            <small>EQUIPE / INSTITUIÇÃO</small>
+                            <b>José Lucas, Pedro Joaquim, Luís Gustavo e Murillo</b>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+        </div>
+
+    </main>
+
+    <footer class="footer">
+        <a class="brand" href="#inicio">
+            <span class="brand-mark">MC</span>
+            <span>Mulheres <em>na Ciência</em></span>
+        </a>
+
+        <p>Conhecer a história também é construir o futuro.</p>
+
+        <div class="footer-bottom">
+            <span>Projeto educativo • SNCT</span>
+            <a href="#inicio">Voltar ao início ↑</a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
