@@ -35,7 +35,9 @@ button {
     font: inherit;
 }
 
-/* CABEÇALHO E NAVEGAÇÃO */
+/* =========================================
+   CABEÇALHO E NAVEGAÇÃO
+========================================= */
 
 .site-header {
     min-height: 68px;
@@ -109,7 +111,9 @@ button {
     min-height: calc(100vh - 180px);
 }
 
-/* SISTEMA DE ABAS */
+/* =========================================
+   SISTEMA DE ABAS
+========================================= */
 
 .tab-panel {
     display: none;
@@ -159,7 +163,9 @@ button {
     }
 }
 
-/* APRESENTAÇÃO */
+/* =========================================
+   APRESENTAÇÃO
+========================================= */
 
 .hero {
     min-height: 430px;
@@ -294,7 +300,9 @@ button {
     display: none;
 }
 
-/* SEÇÕES GERAIS */
+/* =========================================
+   SEÇÕES GERAIS
+========================================= */
 
 .section-shell {
     padding: 60px 10%;
@@ -352,7 +360,9 @@ button {
     background: var(--paper);
 }
 
-/* LINHA DO TEMPO DIAGONAL */
+/* =========================================
+   LINHA DO TEMPO - COMPUTADORES
+========================================= */
 
 .timeline {
     position: relative;
@@ -365,17 +375,7 @@ button {
     padding: 100px 10px;
 }
 
-.timeline::before {
-    content: "";
-    position: absolute;
-    left: 4%;
-    top: 50%;
-    width: 92%;
-    height: 3px;
-    background: #78a66c;
-    transform: rotate(-8deg);
-    transform-origin: center;
-}
+/* ELEMENTOS DA LINHA DO TEMPO */
 
 .timeline-item {
     position: relative;
@@ -388,6 +388,8 @@ button {
     min-height: 240px;
 }
 
+/* POSIÇÃO DOS ACONTECIMENTOS */
+
 .timeline-item:nth-child(odd) {
     transform: translateY(-65px);
 }
@@ -396,14 +398,11 @@ button {
     transform: translateY(65px);
 }
 
-.timeline-item .year {
-    font: 600 19px "Playfair Display", serif;
-    color: var(--wine-dark);
-    margin-bottom: 14px;
-}
+/* CÍRCULOS */
 
 .timeline-item::before {
     content: "";
+    position: relative;
     width: 13px;
     height: 13px;
     flex-shrink: 0;
@@ -412,12 +411,68 @@ button {
     border: 3px solid var(--paper);
     box-shadow: 0 0 0 3px #c5ddbd;
     margin-bottom: 17px;
-    z-index: 2;
+    z-index: 3;
 }
+
+/* ELEMENTO EXTRA DO HTML */
 
 .timeline-dot {
     display: none;
 }
+
+/* ANOS */
+
+.timeline-item .year {
+    font: 600 19px "Playfair Display", serif;
+    color: var(--wine-dark);
+    margin-bottom: 14px;
+}
+
+/* CONECTORES ENTRE OS PONTOS */
+
+.timeline-item::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    width: calc(100% + 15px);
+    height: 130px;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* LIGAÇÃO DO PONTO SUPERIOR AO INFERIOR */
+
+.timeline-item:nth-child(odd)::after {
+    top: 6.5px;
+
+    background:
+        linear-gradient(to top right,
+            transparent calc(50% - 1px),
+            #78a66c calc(50% - 1px),
+            #78a66c calc(50% + 1px),
+            transparent calc(50% + 1px));
+}
+
+/* LIGAÇÃO DO PONTO INFERIOR AO SUPERIOR */
+
+.timeline-item:nth-child(even)::after {
+    top: -123.5px;
+
+    background:
+        linear-gradient(to bottom right,
+            transparent calc(50% - 1px),
+            #78a66c calc(50% - 1px),
+            #78a66c calc(50% + 1px),
+            transparent calc(50% + 1px));
+}
+
+/* ÚLTIMO PONTO SEM CONECTOR */
+
+.timeline-item:last-child::after {
+    display: none;
+}
+
+/* TÍTULOS E DESCRIÇÕES */
 
 .timeline-item h3 {
     font: 600 17px "Playfair Display", serif;
@@ -434,7 +489,9 @@ button {
     line-height: 1.6;
 }
 
-/* DESCOBERTAS */
+/* =========================================
+   DESCOBERTAS
+========================================= */
 
 .discovery {
     padding: 65px 10%;
@@ -491,7 +548,9 @@ button {
     margin-top: 22px;
 }
 
-/* ÁREA DA EXPERIÊNCIA INTERATIVA */
+/* =========================================
+   EXPERIÊNCIA INTERATIVA
+========================================= */
 
 .game-section {
     background: var(--paper);
@@ -657,7 +716,9 @@ button {
     font-size: 11px;
 }
 
-/* MECÂNICAS */
+/* =========================================
+   MECÂNICAS
+========================================= */
 
 .mechanics {
     display: grid;
@@ -690,7 +751,9 @@ button {
     color: var(--muted);
 }
 
-/* QUESTIONÁRIO */
+/* =========================================
+   QUESTIONÁRIO
+========================================= */
 
 .quiz-section {
     margin-top: 55px;
@@ -774,7 +837,9 @@ button {
     display: none;
 }
 
-/* REPRESENTATIVIDADE */
+/* =========================================
+   REPRESENTATIVIDADE
+========================================= */
 
 .women {
     background: var(--surface);
@@ -816,7 +881,9 @@ button {
     color: var(--wine-dark);
 }
 
-/* SOBRE O PROJETO */
+/* =========================================
+   SOBRE O PROJETO
+========================================= */
 
 .project-section {
     padding: 65px 10%;
@@ -864,7 +931,9 @@ button {
     color: #ffffff;
 }
 
-/* RODAPÉ */
+/* =========================================
+   RODAPÉ
+========================================= */
 
 .footer {
     padding: 28px 6% 17px;
@@ -891,9 +960,12 @@ button {
     font-size: 11px;
 }
 
-/* TABLETS */
+/* =========================================
+   SITUAÇÃO 2 - TABLETS
+========================================= */
 
 @media (max-width: 850px) {
+
     .site-header {
         padding: 0 5%;
     }
@@ -940,13 +1012,17 @@ button {
         grid-template-columns: repeat(2, 1fr);
     }
 
+    /* LINHA DO TEMPO EM TABLETS */
+
     .timeline {
         grid-template-columns: repeat(3, minmax(0, 1fr));
         row-gap: 30px;
         padding: 50px 5px;
     }
 
-    .timeline::before {
+    /* DESATIVA OS CONECTORES DIAGONAIS */
+
+    .timeline-item::after {
         display: none;
     }
 
@@ -959,9 +1035,12 @@ button {
     }
 }
 
-/* CELULARES */
+/* =========================================
+   SITUAÇÃO 3 - CELULARES
+========================================= */
 
 @media (max-width: 620px) {
+
     .hero {
         grid-template-columns: 1fr;
         padding: 42px 7%;
@@ -1005,24 +1084,37 @@ button {
         margin-top: 10px;
     }
 
-    /* LINHA DO TEMPO EM CELULARES */
+    /* LINHA DO TEMPO VERTICAL */
 
     .timeline {
+        display: grid;
         grid-template-columns: 1fr;
         gap: 28px;
         padding: 15px 0;
         margin: 25px auto;
     }
 
+    /* LINHA VERTICAL DOS CÍRCULOS */
+
     .timeline::before {
+        content: "";
         display: block;
+        position: absolute;
         left: 7px;
         top: 5px;
         bottom: 5px;
         width: 2px;
         height: auto;
-        transform: none;
+        background: #78a66c;
     }
+
+    /* REMOVE OS CONECTORES DIAGONAIS */
+
+    .timeline-item::after {
+        display: none;
+    }
+
+    /* ORGANIZAÇÃO DOS ACONTECIMENTOS */
 
     .timeline-item,
     .timeline-item:nth-child(n) {
@@ -1035,16 +1127,16 @@ button {
         transform: none;
     }
 
-    .timeline-item .year {
-        grid-column: 2;
-        font-size: 17px;
-        margin: 0 0 5px;
-    }
-
     .timeline-item::before {
         grid-column: 1;
         grid-row: 1 / span 3;
         margin: 5px 0 0;
+    }
+
+    .timeline-item .year {
+        grid-column: 2;
+        font-size: 17px;
+        margin: 0 0 5px;
     }
 
     .timeline-item h3,
@@ -1056,6 +1148,8 @@ button {
     .timeline-item h3 {
         font-size: 17px;
     }
+
+    /* DEMAIS SEÇÕES */
 
     .discovery-cards,
     .women-grid {
