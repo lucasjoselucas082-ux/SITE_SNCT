@@ -1191,3 +1191,393 @@ button {
         font-size: 14px;
     }
 }
+
+/* =========================================
+   PALETA DO MODO ESCURO
+========================================= */
+
+:root[data-theme="dark"] {
+
+    --paper: #151b17;
+    --surface: #202923;
+
+    --ink: #e5ebe4;
+    --muted: #a7b5a5;
+
+    --wine: #82b875;
+    --wine-dark: #a0ce93;
+
+    --gold: #d0b66d;
+    --line: #37453a;
+
+}
+
+/* =========================================
+   BOTÃO DE ALTERNÂNCIA DE TEMA
+========================================= */
+
+.theme-toggle {
+
+    width: 40px;
+    height: 40px;
+
+    display: grid;
+    place-items: center;
+
+    border: 1px solid var(--line);
+    border-radius: 50%;
+
+    background: var(--paper);
+    color: var(--wine-dark);
+
+    font-size: 17px;
+
+    cursor: pointer;
+
+    transition: background .3s, color .3s, transform .3s;
+
+}
+
+.theme-toggle:hover {
+
+    background: var(--wine);
+    color: #ffffff;
+
+    transform: rotate(15deg);
+
+}
+
+/* =========================================
+   TEMA ESCURO - CORES DOS ELEMENTOS
+========================================= */
+
+/* Transição das cores */
+
+body,
+.site-header,
+.hero,
+.intro,
+.history,
+.game-section,
+.women,
+.quiz-section,
+.footer,
+.discovery,
+.project-section,
+.women-grid article,
+.quiz-option {
+
+    transition:
+        background-color .3s ease,
+        color .3s ease,
+        border-color .3s ease;
+
+}
+
+/* Fundo geral */
+
+:root[data-theme="dark"] body {
+
+    background: var(--paper);
+    color: var(--ink);
+
+}
+
+/* Cabeçalho */
+
+:root[data-theme="dark"] .site-header {
+
+    background: var(--surface);
+    border-color: var(--line);
+
+}
+
+:root[data-theme="dark"] .tab-button {
+
+    color: var(--ink);
+
+}
+
+:root[data-theme="dark"] .tab-button:hover,
+:root[data-theme="dark"] .tab-button.active {
+
+    color: var(--wine-dark);
+    border-bottom-color: var(--wine);
+
+}
+
+:root[data-theme="dark"] .menu-toggle {
+
+    color: var(--wine-dark);
+
+}
+
+/* Apresentação */
+
+:root[data-theme="dark"] .hero {
+
+    background: #26352a;
+
+}
+
+:root[data-theme="dark"] .hero h1,
+:root[data-theme="dark"] .intro h2,
+:root[data-theme="dark"] .section-heading h2,
+:root[data-theme="dark"] .game-grid h2,
+:root[data-theme="dark"] .timeline-item h3,
+:root[data-theme="dark"] .mechanics b,
+:root[data-theme="dark"] .quiz-box h2,
+:root[data-theme="dark"] .quiz-question,
+:root[data-theme="dark"] .women-grid h3 {
+
+    color: var(--ink);
+
+}
+
+:root[data-theme="dark"] .hero h1 i,
+:root[data-theme="dark"] .intro h2 i,
+:root[data-theme="dark"] .game-grid h2 i {
+
+    color: #a0ce93;
+
+}
+
+:root[data-theme="dark"] .hero-description,
+:root[data-theme="dark"] .intro-grid p,
+:root[data-theme="dark"] .game-grid p,
+:root[data-theme="dark"] .section-heading > p,
+:root[data-theme="dark"] .timeline-item p,
+:root[data-theme="dark"] .quiz-feedback,
+:root[data-theme="dark"] .women-grid p {
+
+    color: var(--muted);
+
+}
+
+/* Imagem e legenda */
+
+:root[data-theme="dark"] .hero-image-wrap {
+
+    background: #35483a;
+
+}
+
+:root[data-theme="dark"] .image-caption {
+
+    color: var(--muted);
+
+}
+
+/* Linha do tempo */
+
+:root[data-theme="dark"] .timeline-item .year {
+
+    color: var(--wine-dark);
+
+}
+
+:root[data-theme="dark"] .timeline-item::before {
+
+    border-color: var(--paper);
+    box-shadow: 0 0 0 3px #405b43;
+
+}
+
+:root[data-theme="dark"] .timeline-item:nth-child(odd)::after,
+:root[data-theme="dark"] .timeline-item:nth-child(even)::after {
+
+    background-image: linear-gradient(
+        45deg,
+        transparent 49%,
+        #638e68 49%,
+        #638e68 51%,
+        transparent 51%
+    );
+
+}
+
+/* Descobertas */
+
+:root[data-theme="dark"] .discovery {
+
+    background: #263d2d;
+
+}
+
+:root[data-theme="dark"] .discovery-card {
+
+    background: rgba(255, 255, 255, .05);
+    border-color: rgba(255, 255, 255, .15);
+
+}
+
+/* Botões */
+
+:root[data-theme="dark"] .button {
+
+    background: var(--wine);
+    border-color: var(--wine);
+    color: #142018;
+
+}
+
+:root[data-theme="dark"] .button:hover {
+
+    background: #a0ce93;
+
+}
+
+:root[data-theme="dark"] .text-link {
+
+    color: var(--wine-dark);
+
+}
+
+/* Mecânicas */
+
+:root[data-theme="dark"] .mechanics {
+
+    border-color: var(--line);
+
+}
+
+:root[data-theme="dark"] .mechanics span {
+
+    color: var(--wine-dark);
+
+}
+
+:root[data-theme="dark"] .mechanics small,
+:root[data-theme="dark"] .art-caption {
+
+    color: var(--muted);
+
+}
+
+/* Questionário */
+
+:root[data-theme="dark"] .quiz-section {
+
+    background: #26352a;
+    border-left-color: var(--wine);
+
+}
+
+:root[data-theme="dark"] .quiz-option {
+
+    background: #202923;
+    color: var(--ink);
+    border-color: #465849;
+
+}
+
+:root[data-theme="dark"] .quiz-option:hover:not(:disabled) {
+
+    border-color: var(--wine);
+
+}
+
+:root[data-theme="dark"] .quiz-option.correct {
+
+    background: #294b34;
+    border-color: #82b875;
+    color: #dff2dc;
+
+}
+
+:root[data-theme="dark"] .quiz-option.wrong {
+
+    background: #512f32;
+    border-color: #c47c7c;
+    color: #f5dddd;
+
+}
+
+:root[data-theme="dark"] .quiz-next {
+
+    background: var(--wine);
+    color: #142018;
+
+}
+
+/* Representatividade */
+
+:root[data-theme="dark"] .women-grid article {
+
+    background: #26352a;
+    border-top-color: #82b875;
+
+}
+
+:root[data-theme="dark"] .woman-index {
+
+    color: #a0ce93;
+
+}
+
+:root[data-theme="dark"] .women-grid article > span {
+
+    color: var(--wine-dark);
+
+}
+
+/* Projeto */
+
+:root[data-theme="dark"] .project-section {
+
+    background: #1c3023;
+
+}
+
+/* Rodapé */
+
+:root[data-theme="dark"] .footer {
+
+    background: #101913;
+
+    border-top: 1px solid var(--line);
+
+}
+
+/* Menu mobile */
+
+@media (max-width: 850px) {
+
+    :root[data-theme="dark"] .main-nav {
+
+        background: var(--surface);
+        border-color: var(--line);
+
+    }
+
+}
+
+:root[data-theme="dark"] .timeline-item:nth-child(odd)::after {
+
+    background: linear-gradient(
+        to top right,
+        transparent calc(50% - 1px),
+        #638e68 calc(50% - 1px),
+        #638e68 calc(50% + 1px),
+        transparent calc(50% + 1px)
+    );
+
+}
+
+:root[data-theme="dark"] .timeline-item:nth-child(even)::after {
+
+    background: linear-gradient(
+        to bottom right,
+        transparent calc(50% - 1px),
+        #638e68 calc(50% - 1px),
+        #638e68 calc(50% + 1px),
+        transparent calc(50% + 1px)
+    );
+
+}
+
+:root[data-theme="dark"] .menu-toggle:hover {
+
+    color: #a0ce93;
+
+}

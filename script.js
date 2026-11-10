@@ -164,3 +164,168 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
 
 // Abre inicialmente a aba História.
 abrirAba("historia");
+
+// =========================================
+// MODO ESCURO
+// =========================================
+
+const themeToggle = document.getElementById("themeToggle");
+const themeIcon = document.getElementById("themeIcon");
+
+// Recupera o tema salvo ou utiliza o tema claro.
+const savedTheme = localStorage.getItem("theme") || "light";
+
+// Aplica o tema
+function applyTheme(theme) {
+
+    document.documentElement.setAttribute("data-theme", theme);
+
+    const isDark = theme === "dark";
+
+    // Atualiza o ícone
+    themeIcon.className = isDark
+        ? "bi bi-sun-fill"
+        : "bi bi-moon-stars-fill";
+
+    // Atualiza acessibilidade
+    themeToggle.setAttribute(
+        "aria-label",
+        isDark ? "Ativar modo claro" : "Ativar modo escuro"
+    );
+
+    themeToggle.setAttribute("aria-pressed", String(isDark));
+
+    // Salva a preferência
+    localStorage.setItem("theme", theme);
+}
+
+// Alterna entre os temas
+themeToggle.addEventListener("click", () => {
+
+    const currentTheme =
+        document.documentElement.getAttribute("data-theme");
+
+    const newTheme = currentTheme === "dark" ? "light" : "dark";
+
+    applyTheme(newTheme);
+
+});
+
+// Aplica o tema ao carregar a página
+applyTheme(savedTheme);
+
+// =========================================
+// SCROLL REVEAL
+// =========================================
+
+// Elementos que receberão a animação
+const revealElements = [
+    ".intro-grid",
+    ".history .section-heading",
+    ".timeline-item .year",
+    ".timeline-item > div:last-child",
+    ".discovery-inner > .section-kicker",
+    ".discovery-inner > h2",
+    ".discovery-card",
+    ".note-light",
+    ".game-grid > div",
+    ".mechanics > div",
+    ".quiz-box",
+    ".women .section-heading",
+    ".women-grid article",
+    ".project-inner > div"
+].join(",");
+
+// Configuração do observador
+const scrollObserver = new IntersectionObserver((entries, observer) => {
+
+    entries.forEach(entry => {
+
+        if (entry.isIntersecting) {
+
+            entry.target.classList.add("visible");
+
+            // Para de observar depois que o elemento aparece
+            observer.unobserve(entry.target);
+
+        }
+
+    });
+
+}, {
+    threshold: 0.12,
+    rootMargin: "0px 0px -40px 0px"
+});
+
+// Identifica os elementos e inicia a observação
+function iniciarScrollReveal() {
+
+    document.querySelectorAll(revealElements).forEach((elemento, index) => {
+
+        // Evita observar novamente elementos já revelados
+        if (elemento.classList.contains("visible")) return;
+
+        elemento.classList.add("reveal");
+
+        // Pequeno atraso para criar uma sequência de aparição
+        elemento.style.setProperty(
+            "--reveal-delay",
+            `${(index % 5) * 100}ms`
+        );
+
+        // Não observa elementos de abas que estão escondidas
+        if (elemento.closest(".tab-panel[hidden]")) return;
+
+        scrollObserver.observe(elemento);
+
+    });
+
+}
+
+// Detecta quando o usuário troca de seção
+const tabMutationObserver = new MutationObserver(() => {
+
+    document.querySelectorAll(".tab-panel").forEach(painel => {
+
+        // Verifica se a seção está ativa
+        if (!painel.hidden) {
+
+            const elementos = painel.querySelectorAll(".reveal");
+
+            elementos.forEach(elemento => {
+
+                // Interrompe a observação anterior
+                scrollObserver.unobserve(elemento);
+
+                // Reinicia a animação
+                elemento.classList.remove("visible");
+
+            });
+
+            // Aguarda a atualização visual antes de observar novamente
+            requestAnimationFrame(() => {
+
+                elementos.forEach(elemento => {
+                    scrollObserver.observe(elemento);
+                });
+
+            });
+
+        }
+
+    });
+
+});
+
+// Observa as alterações nas abas
+document.querySelectorAll(".tab-panel").forEach(painel => {
+
+    tabMutationObserver.observe(painel, {
+        attributes: true,
+        attributeFilter: ["hidden"]
+    });
+
+});
+
+// Inicia o efeito
+iniciarScrollReveal();
