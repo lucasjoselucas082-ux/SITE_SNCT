@@ -140,6 +140,33 @@ function abrirAba(nome) {
     });
 }
 
+document.querySelectorAll("[data-go]").forEach(botao => {
+    botao.addEventListener("click", () => {
+
+        console.log("Botão clicado:", botao.dataset.go);
+
+        const destino = document.getElementById(botao.dataset.go);
+
+        console.log("Destino encontrado:", destino);
+
+        if (!destino) return;
+
+        const painel = destino.closest(".tab-panel");
+
+        if (painel) {
+            abrirAba(painel.dataset.panel);
+        }
+
+        setTimeout(() => {
+            destino.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+        }, 100);
+
+    });
+});
+
 botoesAbas.forEach(botao => {
     botao.addEventListener("click", () => {
         abrirAba(botao.dataset.tab);
